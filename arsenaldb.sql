@@ -68,7 +68,7 @@ INSERT INTO `fixtures` (`match_id`, `round`, `date`, `time`, `hometeam`, `awayte
 -- Table structure for table `migrations`
 --
 
-CREATE TABLE `migrations` (
+CREATE TABLE `migrations` ( 
   `id` int(10) UNSIGNED NOT NULL,
   `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `batch` int(11) NOT NULL
