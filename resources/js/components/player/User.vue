@@ -1,12 +1,8 @@
 <template>
     <div>
-        <h1 class="my-4">Arsenal
-    <small>Players</small>
-  </h1>
+        
         <div class="container">
-            <div class="row">
-    <h3 class="h3"><a href="players/create" class="btn btn-primary">Add Player to Team</a> </h3>
-    </div>
+            
     <div class="row" >
         <div class="col-md-3 col-sm-6" v-for="(player,index) in players" :key="player.id">
             <div class="product-grid">

@@ -2550,10 +2550,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
     this.getPlayerData();
@@ -39036,11 +39032,7 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _vm._m(0),
-    _vm._v(" "),
     _c("div", { staticClass: "container" }, [
-      _vm._m(1),
-      _vm._v(" "),
       _c(
         "div",
         { staticClass: "row" },
@@ -39103,14 +39095,14 @@ var render = function() {
                   ]),
                   _vm._v(" "),
                   _c("div", { staticClass: "product-content" }, [
-                    _vm._m(2, true),
+                    _vm._m(0, true),
                     _vm._v(" "),
                     _c("div", { staticClass: "price" }, [
                       _vm._v(
                         _vm._s(player.fname) +
                           "  " +
                           _vm._s(player.lname) +
-                          "\n                      \n                  "
+                          "\n                    \n                "
                       )
                     ]),
                     _vm._v(" "),
@@ -39142,29 +39134,6 @@ var render = function() {
   ])
 }
 var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("h1", { staticClass: "my-4" }, [
-      _vm._v("Arsenal\n  "),
-      _c("small", [_vm._v("Players")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row" }, [
-      _c("h3", { staticClass: "h3" }, [
-        _c(
-          "a",
-          { staticClass: "btn btn-primary", attrs: { href: "players/create" } },
-          [_vm._v("Add Player to Team")]
-        )
-      ])
-    ])
-  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
@@ -51358,6 +51327,10 @@ Vue.component('createfixture', __webpack_require__(/*! ./components/fixture/Crea
 var app = new Vue({
   el: '#app'
 });
+
+Vue.prototype.trans = function (key) {
+  return _.get(window.trans, key, key);
+};
 
 /***/ }),
 

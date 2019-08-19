@@ -8,6 +8,7 @@
 <link rel="stylesheet" href="/css/shopping-grid.css">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
 <meta name="csrf-token" content="{{ csrf_token() }}">
+
 <style>
   .masthead {
   height: 250px;
@@ -25,39 +26,41 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light shadow fixed-top">
   <div class="container">
     <a class="navbar-brand" href="/">Arsenal Databases</a>
+    
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
     <div class="collapse navbar-collapse" id="navbarResponsive">
-      <ul class="navbar-nav ml-auto">
+      <ul class="navbar-nav ml-left">
         <li class="nav-item active">
-          <a class="nav-link" href="/">Home
+          <a class="nav-link" href="/">{{ trans('message.Home') }}
                 <span class="sr-only">(current)</span>
               </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/players">Players
+          <a class="nav-link" href="/players">{{ trans('message.Players') }}
           <span class="sr-only">(current)</span>
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/fixtures">Fixture</a>
+          <a class="nav-link" href="/fixtures">{{ trans('message.Fixtures') }}</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Standing</a>
+          <a class="nav-link" href="#">{{ trans('message.Standings') }}</a>
         </li>
       </ul>
 
       <!-- Right Side Of Navbar -->
       <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
+                        
                         @guest
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                <a class="nav-link" href="{{ route('login') }}">{{ trans('message.Login') }}</a>
                             </li>
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <a class="nav-link" href="{{ route('register') }}">{{ trans('message.Register') }}</a>
                                 </li>
                             @endif
                         @else
@@ -79,6 +82,21 @@
                                 </div>
                             </li>
                         @endguest
+                    </ul>
+
+                    <ul class="navbar-nav ml-left">
+                    @if ( Config::get('app.locale') == 'en')
+                    <li><a href='change/en'><b><u>EN</u></b></a></li> &nbsp;
+                    @else
+                    <li><a href='change/en'>EN </a></li> &nbsp;
+                    @endif
+                    / &nbsp;
+                    @if ( Config::get('app.locale') == 'th')
+                    <li><a href='change/th'><b><u>TH</u></b></a></li>
+                    @else
+                    <li><a href='change/th'>TH</a></li>
+                    @endif
+                    
                     </ul>
     </div>
   </div>

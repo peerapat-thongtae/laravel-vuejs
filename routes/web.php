@@ -21,3 +21,8 @@ Route::get('playerss/{id}','PlayerController@show');
 
 Auth::routes();
 
+Route::get('change/{locale}', function ($locale) {
+    Session::put('locale', $locale);
+    return Redirect::back();
+    });
+
